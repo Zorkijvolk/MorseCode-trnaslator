@@ -10,9 +10,27 @@ MorseCode = {'a': '.-', 'b': '-...', 'c': '-.-.', 'd': '-..', 'e': '.', 'f': '..
              'ч': '---.', 'ш': '----', 'щ': '--.-', 'ы': '-.--', 'ь': '-..-', 'э': '..-..', 'ю': '..--', 'я': '.-.-'
              }
 def decode_from_morse(code):
+    morse_code_reverse = {v: k for k, v in MorseCode.items()}
+    decoded_text = ''
+    for morse_char in code:
+        if morse_char in morse_code_reverse:
+            decoded_text += morse_code_reverse[morse_char]
+    return decoded_text
 
 
 def encode_to_morse(text):
 
 
 def main():
+    while True:
+        print('''Приветствую. Я могу помоч вам закодировать или декодировать азбуку морзе. Введите слово "кодировать"
+        или "декодировать"''')
+        a = input()
+        if a == 'кодировать':
+            print('Введите текст')
+            b = input()
+            print(encode_to_morse(b))
+        elif a == 'декодировать':
+            print('Введите код')
+            b = input()
+            print(decode_from_morse(b))
