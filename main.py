@@ -1,3 +1,5 @@
+# словарь с азбукой морзе
+# dictionary with morse code
 MorseCode = {'a': '.-', 'b': '-...', 'c': '-.-.', 'd': '-..', 'e': '.', 'f': '..-.', 'g': '--.', 'h': '....',
              'i': '..', 'j': '.---', 'k': '-.-', 'l': '.-..', 'm': '--', 'n': '-.', 'o': '---', 'p': '.--.',
              'q': '--.-', 'r': '.-.', 's': '...', 't': '-', 'u': '..-', 'v': '...-', 'w': '.--', 'x': '-..-',
@@ -11,6 +13,8 @@ MorseCode = {'a': '.-', 'b': '-...', 'c': '-.-.', 'd': '-..', 'e': '.', 'f': '..
              }
 
 
+# функция дешифрации
+# a decryption function
 def decode_from_morse(code):
     morse_code_reverse = {v: k for k, v in MorseCode.items()}
     decoded_text = ''
@@ -24,6 +28,8 @@ def decode_from_morse(code):
     return decoded_text
 
 
+# функция шифрации
+# an encryption function
 def encode_to_morse(text):
     encoded_message = []
     for char in text.lower():
@@ -34,6 +40,8 @@ def encode_to_morse(text):
     return ' '.join(encoded_message)
 
 
+# основная функция программы
+# the main function of the program
 def main():
     while True:
         print('''Приветствую. Я могу помоч вам закодировать или декодировать азбуку морзе. Введите слово "кодировать"
